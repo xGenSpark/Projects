@@ -1,38 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Example</title>
-        <link rel="stylesheet" href="Assignment 1/assignment.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Kinematic Calculator</title>
+      <link href="Capstone Project/CSS/kinematic_calculator.css" rel="stylesheet">
+      <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+        crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
     </head>
     <body>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm"></div>
-          <div class="col-sm" id="form-box">
-            <h4>Page 1</h4>
-            <h4>Alphanumerical</h4>
-            <a href="index.html">1</a>
-            <a href="page-2.html">2</a>
-            <a href="page-3.html">3</a>
-            <a href="page-4.html">4</a>
-            <a href="page-5.html">5</a><br><br><br>
-            <form>
-              <label for="statement">Statement:</label><br>
-              <input type="text" id="statement-1" name="statement" placeholder="Abc123" autofocus>
-              <br><br>
-              <input type="submit" id="submit-1" value="Submit">
-            </form>
-          </div>
-          <div class="col-sm"></div>
-        </div>
+      <!-- Start of Header. -->
+      <header>
+        <a id="title" href="index.html">Kinematic Calculator</a>
+        <a id="about" href="#">About</a>
+      </header>
+      <div id="about-description">
+        This site serves as a tool in calculating the five values employed in
+        the five kinematic equations. In order to utilize this application,
+        please enter at least 3 or 4 numerical values into the form below, so
+        that the other values may be computed. If 5 or less than 3 values are entered, no computations will occur.
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <script src="Assignment 1/assignment.js"></script>
+      <!-- End of Header. -->
+      
+      <!-- Start of Main. -->
+      <main>
+        <img id="equations" src="Capstone Project/Images/equations.png"
+        alt="Kinematic Equations">
+        
+        <form autocomplete="on">
+          <h3>INPUT</h3>
+          
+          <label for="i_velocity">Initial velocity:<br>
+            <input id="i_velocity" type="text" name="value" placeholder="m/s"
+              autofocus>
+          </label><br>
+          
+          <label for="f_velocity">Final velocity:<br>
+            <input id="f_velocity" type="text" name="value" placeholder="m/s"
+            >
+          </label><br>
+          
+          <label for="distance">Distance:<br>
+            <input id="distance" type="text" name="value" placeholder="m"
+              >
+          </label><br>
+          
+          <label for="time">Time:<br>
+            <input id="time" type="text" name="value" placeholder="s" >
+          </label><br>
+          
+          <label for="acceleration">Acceleration:<br>
+            <input id="acceleration" type="text" name="value"
+              placeholder="m/s^2" >
+          </label><br>
+          
+          <input id="submit" type="submit" value="Submit">
+          <input id="clear" type="submit" value="Clear">
+        </form>
+        
+        <div id="results">
+          <h3>OUTPUT</h3>
+          <p>Initial Velocity: </p>
+          <div id="i_v_value">---</div>
+          <p>Final Velocity: </p>
+          <div id="f_v_value">---</div>
+          <p>Distance: </p>
+          <div id="d_value">---</div>
+          <p>Time: </p>
+          <div id="t_value">---</div>
+          <p>Acceleration: </p>
+          <div id="a_value">---</div>
+        </div>
+      </main>
+      <!-- End of Main. -->
+      
+      <!-- Start of Footer. -->
+      <footer id="contact-section">
+        <div id="contact-title">
+          <i class="fas fa-info-circle fa-2x"></i>
+          <h2>Contact</h2>
+        </div>
+        <div class="link">
+          <a href="https://github.com/xGenSpark/xGenSpark.github.io">
+            <i class="fab fa-github fa-2x fa-fw"></i>
+            <p>github.com/xGenSpark</p>
+          </a>
+        </div>
+      </footer>
+      <!-- End of Footer. -->
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="Capstone Project/JavaScript/kinematic_calculator.js"></script>
     </body>
 </html>
